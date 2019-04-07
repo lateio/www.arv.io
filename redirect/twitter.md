@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Twitter
+#title: Twitter
 permalink: /twitter
 redirect_to: http://twitter.com/_lateio
 redirect_from:
