@@ -1,0 +1,27 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  {%- include favicon.html -%}
+  <style type="text/css">
+      .doclinks {
+          opacity: 0.3;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          transition:
+              opacity 0.1s ease-in 0s,
+              background-color 0.05s ease-in 0s;
+      }
+
+      .doclinks:hover {
+          opacity: 1.0;
+          background-color: #eef;
+      }
+  </style>
+</head>
