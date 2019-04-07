@@ -57,8 +57,9 @@ defaults:
 twitter:
     username: _lateio
     card: summary
-#webmaster_verifications:
-#    google: 1234
+webmaster_verifications:
+    bing: 'D8AF3360EB5696042102A31C635929EA'
+    yandex: '0354ee548452fd9a'
 lang: en_FI
 
 # Exclude from processing.
