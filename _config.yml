@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Arvio
 email: l@arv.io
-description: I hope you have something in your life you could put in DNS for the maximum TTL.
+description: May you find something you could put in DNS for the max TTL.
 baseurl: '' # the subpath of your site, e.g. /blog
 url: http://www.arv.io # the base hostname & protocol for your site, e.g. http://example.com
 github_username: lateio
