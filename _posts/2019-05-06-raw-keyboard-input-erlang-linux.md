@@ -212,7 +212,7 @@ It turns out that at this level, the keys we normally perceive as modifiers (shi
 
 Another detail of interest: peeking into the Linux header files, you can find codes like `KEY_A`, `KEY_LEFTSHIFT` but nothing like a KEY_Ö. Yet an `Ö` key sits on my Finnish keyboard. Hitting it produces an event with keycode `KEY_SEMICOLON`, but on my keyboard semicolon is produced by `Shift+comma`. You can [go back](#{{ "KeyboardEvent example" | slugify }}) and check out how the weirder keys on your keyboard register. What is actually going on?
 
-Welcome to the world of keyboard layouts. Although in Linux the standard keycodes underlay keyboard hardware, the consumers of keyboard events transparently map these codes to different characters, not dissimilarly to how the effects of modifier keys get conjured up. Thus `KEY_SEMICOLON` becomes `Ö` on the Finnish keyboard and the actual semicolon gets relocated.
+Welcome to the world of keyboard layouts. Although in Linux the standard keycodes underlay keyboard hardware, the consumers of keyboard events transparently map these codes to different characters, not unlike how the effects of modifier keys get conjured up. Thus `KEY_SEMICOLON` becomes `Ö` on the Finnish keyboard and the actual semicolon gets relocated.
 
 So as it turns out, some slight of hand goes into making a keyboard work the way we perceive it working. And because we are intentionally bypassing the normal consumer of these events (both the terminal and the GUI), it will be up to us to produce this behavior.
 
@@ -387,7 +387,7 @@ static int evdev_drv_initial_state(struct evdev_drv_state *state)
 {% endhighlight %}
 {: **}
 
-In this example we don't do anything about non-modifier keys that might be depressed at the time of the `ioctl()` call. It is possible, however, that one or more non-modifier keys turn out to be depressed. In such a case we would not be able to tell anything about the order in which they were pressed, or how many button presses might have preceded them. This introduces the possibility that the first input acquired from a device could be truncated, as our `open()` call might have occurred in between `EV_KEY` events. I elected not to treat this as a special case because it is not ultimately dissimilar to the possibility that any read from the device is in some way invalid: instead of what we're expecting, the read might be the closest barcode that happens to capture the eye of a wandering/bored mind. We always have to validate the input and that validation should catch cases where the input is truncated.
+In this example we don't do anything about non-modifier keys that might be depressed at the time of the `ioctl()` call. It is possible, however, that one or more non-modifier keys turn out to be depressed. In such a case we would not be able to tell anything about the order in which they were pressed, or how many button presses might have preceded them. This introduces the possibility that the first input acquired from a device could be truncated, as our `open()` call might have occurred in between `EV_KEY` events. I elected not to treat this as a special case because there is ultimately no guarantee that _any_ read from the device – be it the first one or any that follow it – is valid: instead of what we're expecting, the read might be the closest barcode that happens to capture the eye of a wandering/bored mind. We always have to validate the input and that validation should catch cases where the input is truncated.
 
 ### Returning the input
 
