@@ -446,7 +446,7 @@ You can see that my reader assumes that `"` is produced by `Shift+2`, `$` is pro
 
 ### (Re-)Connected devices
 
-You might have already picked on the fact that our driver is rather static. It assumes that you have a prior idea of which devices you are interested in, you know where they can be found and then you start a driver on them. However, USB devices can appear and disappear according to the whims of the user. We will not be tackling the topic of device enumeration, discovery and monitoring in this article, but for those interested, I suggest you take a look at [udev](https://www.freedesktop.org/software/systemd/man/udev.html){: rel="nofollow" target="_blank" __} and [libudev](https://www.freedesktop.org/software/systemd/man/libudev.html){: rel="nofollow" target="_blank" __}. Monitoring, in particular, might prove suitable for implementing via an Erlang driver.
+You might have already picked up on the fact that our driver is rather static. It assumes that you have a prior idea of which devices you are interested in, you know where they can be found and then you start a driver on them. However, USB devices can appear and disappear according to the whims of the user. We will not be tackling the topics of device enumeration, discovery and monitoring in this article, but for those interested, I suggest you take a look at [udev](https://www.freedesktop.org/software/systemd/man/udev.html){: rel="nofollow" target="_blank" __} and [libudev](https://www.freedesktop.org/software/systemd/man/libudev.html){: rel="nofollow" target="_blank" __}. Monitoring, in particular, might prove suitable for implementing via an Erlang driver.
 
 ### Captured, not gone
 
