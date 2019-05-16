@@ -263,7 +263,7 @@ Didn't we previously say that "everything's a file in UNIX"? Can't we use the [`
 
 While we can actually open an input device file with `file:open/2`, getting the input this way does not actually work. `file:read/2` seems to just hang while `file:read/2` on a file opened in `'raw'` mode produces an `{'error', 'einval'}` error.
 
-It turns out "Everything is a file in UNIX" is not actually _literally true_, but instead articulates a wonderful interface decision the UNIX designers made back around the epoch. `file` module, which is meant for handling normal files (opposed to device files, such as our reader/keyboard), is not going to work in our case.
+It turns out "Everything is a file in UNIX" is not actually _literally true_, but instead articulates a wonderful interface decision the UNIX designers made back around the epoch. `file` module, which is meant for handling normal files (as opposed to device files, such as our reader/keyboard), is not going to work in our case.
 
 ## The Erlang driver
 
